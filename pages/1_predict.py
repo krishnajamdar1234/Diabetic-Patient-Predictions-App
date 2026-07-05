@@ -102,7 +102,7 @@ with col1:
     st.subheader("🩺 Hypertension")
     hypertension = st.selectbox(
         "",
-        [0, 1],
+        ["No", "Yes"],
         label_visibility="collapsed",
         key="hypertension"
     )
@@ -110,7 +110,7 @@ with col1:
     st.subheader("❤️ Heart Disease")
     heart_disease = st.selectbox(
         "",
-        [0, 1],
+        ["No", "Yes"],
         label_visibility="collapsed",
         key="heart_disease"
     )
@@ -165,6 +165,9 @@ with col2:
 # ENCODING
 # -----------------------------
 gender = 0 if gender == "Female" else 1
+
+hypertension = 1 if hypertension == "Yes" else 0
+heart_disease = 1 if heart_disease == "Yes" else 0
 
 st.markdown("---")
 
