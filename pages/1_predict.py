@@ -117,14 +117,19 @@ with col1:
 
 with col2:
 
-    st.subheader("🚬 Smoking History")
-    smoking_history = st.selectbox(
-        "",
-        [0, 1, 2, 3, 4, 5],
-        label_visibility="collapsed",
-        key="smoking_history"
-    )
-
+  smoking_history = st.selectbox(
+    "",
+    [
+        "never",
+        "No Info",
+        "current",
+        "former",
+        "ever",
+        "not current"
+    ],
+    label_visibility="collapsed",
+    key="smoking_history"
+)
     st.subheader("⚖️ BMI")
     bmi = st.number_input(
         "",
