@@ -56,3 +56,21 @@ div[data-testid="stWidgetLabel"] label {
     color: white !important;
     font-weight: bold !important;
 }
+
+/* Fix widget labels */
+div[data-testid="stWidgetLabel"] label {
+    color: white !important;
+    opacity: 1 !important;
+    display: block !important;
+    visibility: visible !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+}
+
+/* Selectbox & NumberInput labels */
+.stSelectbox label,
+.stNumberInput label {
+    color: white !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
