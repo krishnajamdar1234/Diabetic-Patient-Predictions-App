@@ -103,3 +103,20 @@ section[data-testid="stSidebar"] *{
 label {
     color: red !important;
 }
+
+/* Widget labels */
+div[data-testid="stWidgetLabel"] p,
+div[data-testid="stWidgetLabel"] label,
+div[data-testid="stWidgetLabel"] span {
+    color: #ffffff !important;
+}
+
+/* Selectbox selected text */
+.stSelectbox div[data-baseweb="select"] > div {
+    color: white !important;
+}
+
+/* Number input text */
+.stNumberInput input {
+    color: white !important;
+}
