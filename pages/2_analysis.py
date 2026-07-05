@@ -2,17 +2,23 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-def load_css():
-    with open("style.css") as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
-load_css()
-
+# 👇 FIRST
 st.set_page_config(
     page_title="Analytics",
     page_icon="📊",
     layout="wide"
 )
+
+# 👇 NANTAR function
+def load_css():
+    with open("style.css") as f:
+        st.markdown(
+            f"<style>{f.read()}</style>",
+            unsafe_allow_html=True
+        )
+
+# 👇 NANTAR call
+load_css()
 
 st.sidebar.title("🩺 Diabetes Prediction System")
 
