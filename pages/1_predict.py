@@ -81,56 +81,48 @@ col1, col2 = st.columns(2)
 
 with col1:
 
-    gender = st.selectbox(
-        "Gender",
-        ["Female", "Male"]
-    )
+   st.markdown("#### Gender")
+gender = st.selectbox(
+    label="",
+    options=["Female", "Male"],
+    label_visibility="collapsed"
+)
 
-    age = st.number_input(
-        "Age",
-        min_value=1,
-        max_value=120,
-        value=25
-    )
+st.markdown("#### Age")
+age = st.number_input(
+    label="",
+    min_value=1,
+    max_value=120,
+    value=25,
+    label_visibility="collapsed"
+)
 
-    hypertension = st.selectbox(
-        "Hypertension",
-        [0, 1]
-    )
+st.markdown("#### Hypertension")
+hypertension = st.selectbox(
+    label="",
+    options=[0, 1],
+    label_visibility="collapsed"
+)
 
-    heart_disease = st.selectbox(
-        "Heart Disease",
-        [0, 1]
-    )
-
+st.markdown("#### Heart Disease")
+heart_disease = st.selectbox(
+    label="",
+    options=[0, 1],
+    label_visibility="collapsed"
+)
 with col2:
 
-    smoking_history = st.selectbox(
-        "Smoking History",
-        [0, 1, 2, 3, 4, 5]
-    )
+    st.markdown("#### Smoking History")
+smoking_history = st.selectbox("", [0,1,2,3,4,5], label_visibility="collapsed")
 
-    bmi = st.number_input(
-        "BMI",
-        min_value=10.0,
-        max_value=70.0,
-        value=25.0
-    )
+st.markdown("#### BMI")
+bmi = st.number_input("", min_value=10.0, max_value=70.0, value=25.0, label_visibility="collapsed")
 
-    hba1c = st.number_input(
-        "HbA1c Level",
-        min_value=3.0,
-        max_value=15.0,
-        value=5.5
-    )
+st.markdown("#### HbA1c Level")
+hba1c = st.number_input("", min_value=3.0, max_value=15.0, value=5.5, label_visibility="collapsed")
 
-    blood_glucose = st.number_input(
-        "Blood Glucose Level",
-        min_value=50,
-        max_value=400,
-        value=100
-    )
-
+st.markdown("#### Blood Glucose Level")
+blood_glucose = st.number_input("", min_value=50, max_value=400, value=100, label_visibility="collapsed")
 # -----------------------------
 # ENCODING
 # -----------------------------
