@@ -25,7 +25,7 @@ def load_css():
                 unsafe_allow_html=True
             )
 
-#load_css()
+load_css()
 
 # -----------------------------
 # SIDEBAR
