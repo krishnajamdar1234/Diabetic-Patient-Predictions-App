@@ -77,51 +77,66 @@ st.subheader("📝 Enter Patient Details")
 col1, col2 = st.columns(2)
 
 with col1:
-    gender = st.selectbox("Gender", ["Female", "Male"])
 
+    st.subheader("Gender")
+    gender = st.selectbox("", ["Female", "Male"], key="gender")
+
+    st.subheader("Age")
     age = st.number_input(
-        "Age",
+        "",
         min_value=1,
         max_value=120,
-        value=25
+        value=25,
+        key="age"
     )
 
+    st.subheader("Hypertension")
     hypertension = st.selectbox(
-        "Hypertension",
-        [0, 1]
+        "",
+        [0, 1],
+        key="hypertension"
     )
 
+    st.subheader("Heart Disease")
     heart_disease = st.selectbox(
-        "Heart Disease",
-        [0, 1]
+        "",
+        [0, 1],
+        key="heart"
     )
-
 with col2:
 
+    st.subheader("Smoking History")
     smoking_history = st.selectbox(
-        "Smoking History",
-        [0, 1, 2, 3, 4, 5]
+        "",
+        [0, 1, 2, 3, 4, 5],
+        key="smoking"
     )
 
+    st.subheader("BMI")
     bmi = st.number_input(
-        "BMI",
+        "",
         min_value=10.0,
         max_value=70.0,
-        value=25.0
+        value=25.0,
+        key="bmi"
     )
 
+    st.subheader("HbA1c Level")
     hba1c = st.number_input(
-        "HbA1c Level",
+        "",
         min_value=3.0,
         max_value=15.0,
-        value=5.5
+        value=5.5,
+        key="hba1c"
     )
 
+    st.subheader("Blood Glucose Level")
     blood_glucose = st.number_input(
-        "Blood Glucose Level",
+        "",
         min_value=50,
         max_value=400,
-        value=100
+        value=100,
+        key="glucose"
     )
 
 # -----------------------------
