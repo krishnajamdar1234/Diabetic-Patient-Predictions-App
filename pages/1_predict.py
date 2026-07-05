@@ -78,8 +78,11 @@ col1, col2 = st.columns(2)
 
 with col1:
 
-    st.subheader("Gender")
-    gender = st.selectbox("", ["Female", "Male"], key="gender")
+   gender = st.selectbox(
+    "Gender",
+    ["Female", "Male"],
+    label_visibility="visible"
+)
 
     st.subheader("Age")
     age = st.number_input(
