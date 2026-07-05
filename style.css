@@ -65,9 +65,9 @@ div[data-testid="metric-container"]{
 /* Actual input */
 .stSelectbox div[data-baseweb="select"],
 .stNumberInput input{
-    background:#1f2937 !important;
+    background:black !important;
     color:white !important;
-    border:1px solid #6366f1 !important;
+    border:2px solid #6366f1 !important;
     border-radius:10px !important;
 }
 /* ===========================
