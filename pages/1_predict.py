@@ -117,19 +117,21 @@ with col1:
 
 with col2:
 
-  smoking_history = st.selectbox(
-    "",
-    [
-        "never",
-        "No Info",
-        "current",
-        "former",
-        "ever",
-        "not current"
-    ],
-    label_visibility="collapsed",
-    key="smoking_history"
-)
+    st.subheader("🚬 Smoking History")
+    smoking_history = st.selectbox(
+        "",
+        [
+            "never",
+            "No Info",
+            "current",
+            "former",
+            "ever",
+            "not current"
+        ],
+        label_visibility="collapsed",
+        key="smoking_history"
+    )
+
     st.subheader("⚖️ BMI")
     bmi = st.number_input(
         "",
@@ -175,17 +177,21 @@ predict = st.button(
 # -----------------------------
 # PREDICTION
 # -----------------------------
+# -----------------------------
+# PREDICTION
+# -----------------------------
 if predict:
-    smoking_map = {
-    "never": 0,
-    "No Info": 1,
-    "current": 2,
-    "former": 3,
-    "ever": 4,
-    "not current": 5
-}
 
-smoking_history = smoking_map[smoking_history]
+    smoking_map = {
+        "never": 0,
+        "No Info": 1,
+        "current": 2,
+        "former": 3,
+        "ever": 4,
+        "not current": 5
+    }
+
+    smoking_history = smoking_map[smoking_history]
 
     features = np.array([[
         gender,
@@ -204,14 +210,10 @@ smoking_history = smoking_map[smoking_history]
     confidence = float(np.max(probability)) * 100
 
     st.markdown("---")
-
-    # RESULT
+     # RESULT
     if prediction[0] == 1:
-
         st.error("🔴 Diabetes Detected")
-
     else:
-
         st.success("🟢 No Diabetes Detected")
 
     # CONFIDENCE
@@ -266,6 +268,9 @@ smoking_history = smoking_map[smoking_history]
 ✔ Get regular health checkups.
 """)
 
+# -----------------------------
+# FOOTER
+# -----------------------------
 # -----------------------------
 # FOOTER
 # -----------------------------
