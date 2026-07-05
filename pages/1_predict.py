@@ -78,10 +78,10 @@ col1, col2 = st.columns(2)
 
 with col1:
 
-st.markdown("**Gender**")
+st.write("**Gender**")
 gender = st.selectbox(
-    label="",
-    options=["Female", "Male"],
+    "",
+    ["Female", "Male"],
     key="gender"
 )
 
