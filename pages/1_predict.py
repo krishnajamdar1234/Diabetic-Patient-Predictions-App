@@ -81,70 +81,79 @@ col1, col2 = st.columns(2)
 
 with col1:
 
-  gender = st.selectbox(
-    "",
-    ["Female", "Male"],
-    label_visibility="collapsed",
-    key="gender"
-)
+    st.subheader("👤 Gender")
+    gender = st.selectbox(
+        "",
+        ["Female", "Male"],
+        label_visibility="collapsed",
+        key="gender"
+    )
 
-age = st.number_input(
-    "",
-    min_value=1,
-    max_value=120,
-    value=25,
-    label_visibility="collapsed",
-    key="age"
-)
+    st.subheader("🎂 Age")
+    age = st.number_input(
+        "",
+        min_value=1,
+        max_value=120,
+        value=25,
+        label_visibility="collapsed",
+        key="age"
+    )
 
-hypertension = st.selectbox(
-    "",
-    [0, 1],
-    label_visibility="collapsed",
-    key="hypertension"
-)
+    st.subheader("🩺 Hypertension")
+    hypertension = st.selectbox(
+        "",
+        [0, 1],
+        label_visibility="collapsed",
+        key="hypertension"
+    )
 
-heart_disease = st.selectbox(
-    "",
-    [0, 1],
-    label_visibility="collapsed",
-    key="heart_disease"
-)
+    st.subheader("❤️ Heart Disease")
+    heart_disease = st.selectbox(
+        "",
+        [0, 1],
+        label_visibility="collapsed",
+        key="heart_disease"
+    )
+
 with col2:
 
+    st.subheader("🚬 Smoking History")
     smoking_history = st.selectbox(
-    "",
-    [0,1,2,3,4,5],
-    label_visibility="collapsed",
-    key="smoking_history"
-)
+        "",
+        [0, 1, 2, 3, 4, 5],
+        label_visibility="collapsed",
+        key="smoking_history"
+    )
 
-bmi = st.number_input(
-    "",
-    min_value=10.0,
-    max_value=70.0,
-    value=25.0,
-    label_visibility="collapsed",
-    key="bmi"
-)
+    st.subheader("⚖️ BMI")
+    bmi = st.number_input(
+        "",
+        min_value=10.0,
+        max_value=70.0,
+        value=25.0,
+        label_visibility="collapsed",
+        key="bmi"
+    )
 
-hba1c = st.number_input(
-    "",
-    min_value=3.0,
-    max_value=15.0,
-    value=5.5,
-    label_visibility="collapsed",
-    key="hba1c"
-)
+    st.subheader("🧪 HbA1c Level")
+    hba1c = st.number_input(
+        "",
+        min_value=3.0,
+        max_value=15.0,
+        value=5.5,
+        label_visibility="collapsed",
+        key="hba1c"
+    )
 
-blood_glucose = st.number_input(
-    "",
-    min_value=50,
-    max_value=400,
-    value=100,
-    label_visibility="collapsed",
-    key="blood_glucose"
-)
+    st.subheader("🩸 Blood Glucose Level")
+    blood_glucose = st.number_input(
+        "",
+        min_value=50,
+        max_value=400,
+        value=100,
+        label_visibility="collapsed",
+        key="blood_glucose"
+    )
 # -----------------------------
 # ENCODING
 # -----------------------------
