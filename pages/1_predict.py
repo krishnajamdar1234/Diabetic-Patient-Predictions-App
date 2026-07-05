@@ -78,10 +78,11 @@ col1, col2 = st.columns(2)
 
 with col1:
 
-   gender = st.selectbox(
-    "Gender",
-    ["Female", "Male"],
-    label_visibility="visible"
+st.markdown("**Gender**")
+gender = st.selectbox(
+    label="",
+    options=["Female", "Male"],
+    key="gender"
 )
 
     st.subheader("Age")
