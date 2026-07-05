@@ -26,7 +26,7 @@ def load_css():
             )
 
 load_css()
-
+st.success("CSS Loaded")
 # -----------------------------
 # SIDEBAR
 # -----------------------------
