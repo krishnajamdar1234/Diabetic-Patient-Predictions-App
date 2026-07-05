@@ -81,48 +81,70 @@ col1, col2 = st.columns(2)
 
 with col1:
 
-   st.markdown("#### Gender")
-gender = st.selectbox(
-    label="",
-    options=["Female", "Male"],
-    label_visibility="collapsed"
-)
+    st.markdown("### 👤 Gender")
+    gender = st.selectbox(
+        "",
+        ["Female", "Male"],
+        label_visibility="collapsed"
+    )
 
-st.markdown("#### Age")
-age = st.number_input(
-    label="",
-    min_value=1,
-    max_value=120,
-    value=25,
-    label_visibility="collapsed"
-)
+    st.markdown("### 🎂 Age")
+    age = st.number_input(
+        "",
+        min_value=1,
+        max_value=120,
+        value=25,
+        label_visibility="collapsed"
+    )
 
-st.markdown("#### Hypertension")
-hypertension = st.selectbox(
-    label="",
-    options=[0, 1],
-    label_visibility="collapsed"
-)
+    st.markdown("### 🩺 Hypertension")
+    hypertension = st.selectbox(
+        "",
+        [0, 1],
+        label_visibility="collapsed"
+    )
 
-st.markdown("#### Heart Disease")
-heart_disease = st.selectbox(
-    label="",
-    options=[0, 1],
-    label_visibility="collapsed"
-)
+    st.markdown("### ❤️ Heart Disease")
+    heart_disease = st.selectbox(
+        "",
+        [0, 1],
+        label_visibility="collapsed"
+    )
 with col2:
 
-    st.markdown("#### Smoking History")
-smoking_history = st.selectbox("", [0,1,2,3,4,5], label_visibility="collapsed")
+    st.markdown("### 🚬 Smoking History")
+    smoking_history = st.selectbox(
+        "",
+        [0, 1, 2, 3, 4, 5],
+        label_visibility="collapsed"
+    )
 
-st.markdown("#### BMI")
-bmi = st.number_input("", min_value=10.0, max_value=70.0, value=25.0, label_visibility="collapsed")
+    st.markdown("### ⚖️ BMI")
+    bmi = st.number_input(
+        "",
+        min_value=10.0,
+        max_value=70.0,
+        value=25.0,
+        label_visibility="collapsed"
+    )
 
-st.markdown("#### HbA1c Level")
-hba1c = st.number_input("", min_value=3.0, max_value=15.0, value=5.5, label_visibility="collapsed")
+    st.markdown("### 🧪 HbA1c Level")
+    hba1c = st.number_input(
+        "",
+        min_value=3.0,
+        max_value=15.0,
+        value=5.5,
+        label_visibility="collapsed"
+    )
 
-st.markdown("#### Blood Glucose Level")
-blood_glucose = st.number_input("", min_value=50, max_value=400, value=100, label_visibility="collapsed")
+    st.markdown("### 🩸 Blood Glucose Level")
+    blood_glucose = st.number_input(
+        "",
+        min_value=50,
+        max_value=400,
+        value=100,
+        label_visibility="collapsed"
+    )
 # -----------------------------
 # ENCODING
 # -----------------------------
