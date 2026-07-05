@@ -176,6 +176,16 @@ predict = st.button(
 # PREDICTION
 # -----------------------------
 if predict:
+    smoking_map = {
+    "never": 0,
+    "No Info": 1,
+    "current": 2,
+    "former": 3,
+    "ever": 4,
+    "not current": 5
+}
+
+smoking_history = smoking_map[smoking_history]
 
     features = np.array([[
         gender,
