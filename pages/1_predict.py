@@ -1,6 +1,7 @@
 import streamlit as st
 import pickle
 import numpy as np
+from pathlib import Path
 
 # -----------------------------
 # PAGE CONFIG
@@ -10,16 +11,19 @@ st.set_page_config(
     page_icon="🩺",
     layout="wide"
 )
-load_css()
+
 # -----------------------------
 # LOAD CSS
 # -----------------------------
 def load_css():
-    try:
-        with open("style.css") as f:
-            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-    except:
-        pass
+    css_file = Path(__file__).parent.parent / "style.css"
+
+    if css_file.exists():
+        with open(css_file, "r", encoding="utf-8") as f:
+            st.markdown(
+                f"<style>{f.read()}</style>",
+                unsafe_allow_html=True
+            )
 
 load_css()
 
@@ -71,82 +75,65 @@ st.markdown("---")
 st.subheader("📝 Enter Patient Details")
 
 # -----------------------------
-# INPUT FORM
+# INPUTS
 # -----------------------------
-
 col1, col2 = st.columns(2)
 
 with col1:
 
-st.write("**Gender**")
-gender = st.selectbox(
-    "",
-    ["Female", "Male"],
-    key="gender"
-)
+    gender = st.selectbox(
+        "Gender",
+        ["Female", "Male"]
+    )
 
-    st.subheader("Age")
     age = st.number_input(
-        "",
+        "Age",
         min_value=1,
         max_value=120,
-        value=25,
-        key="age"
+        value=25
     )
 
-    st.subheader("Hypertension")
     hypertension = st.selectbox(
-        "",
-        [0, 1],
-        key="hypertension"
+        "Hypertension",
+        [0, 1]
     )
 
-    st.subheader("Heart Disease")
     heart_disease = st.selectbox(
-        "",
-        [0, 1],
-        key="heart"
+        "Heart Disease",
+        [0, 1]
     )
+
 with col2:
 
-    st.subheader("Smoking History")
     smoking_history = st.selectbox(
-        "",
-        [0, 1, 2, 3, 4, 5],
-        key="smoking"
+        "Smoking History",
+        [0, 1, 2, 3, 4, 5]
     )
 
-    st.subheader("BMI")
     bmi = st.number_input(
-        "",
+        "BMI",
         min_value=10.0,
         max_value=70.0,
-        value=25.0,
-        key="bmi"
+        value=25.0
     )
 
-    st.subheader("HbA1c Level")
     hba1c = st.number_input(
-        "",
+        "HbA1c Level",
         min_value=3.0,
         max_value=15.0,
-        value=5.5,
-        key="hba1c"
+        value=5.5
     )
 
-    st.subheader("Blood Glucose Level")
     blood_glucose = st.number_input(
-        "",
+        "Blood Glucose Level",
         min_value=50,
         max_value=400,
-        value=100,
-        key="glucose"
+        value=100
     )
 
 # -----------------------------
 # ENCODING
 # -----------------------------
-
 gender = 0 if gender == "Female" else 1
 
 st.markdown("---")
@@ -156,10 +143,10 @@ predict = st.button(
     use_container_width=True
 )
 
+
 # -----------------------------
 # PREDICTION
 # -----------------------------
-
 if predict:
 
     features = np.array([[
@@ -173,10 +160,7 @@ if predict:
         blood_glucose
     ]])
 
-    # Model Prediction
     prediction = model.predict(features)
-
-    # Prediction Probability
     probability = model.predict_proba(features)
 
     confidence = float(np.max(probability)) * 100
@@ -192,14 +176,14 @@ if predict:
 
         st.success("🟢 No Diabetes Detected")
 
-    # Confidence
+    # CONFIDENCE
     st.subheader("Prediction Confidence")
 
     st.progress(confidence / 100)
 
     st.write(f"Confidence : {confidence:.2f}%")
 
-    # Risk Level
+    # RISK LEVEL
     st.subheader("Risk Assessment")
 
     if confidence >= 90:
@@ -211,11 +195,9 @@ if predict:
     else:
         st.info("🟢 Low Confidence")
 
-
- # -----------------------------
+    # -----------------------------
     # HEALTH RECOMMENDATION
     # -----------------------------
-
     st.subheader("💡 Health Recommendation")
 
     if prediction[0] == 1:
@@ -249,7 +231,6 @@ if predict:
 # -----------------------------
 # FOOTER
 # -----------------------------
-
 st.markdown("---")
 
 st.markdown(
